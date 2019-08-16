@@ -1,0 +1,113 @@
+:root {
+  --font-color: white;
+  --margin: 75px;
+}
+
+body {
+  margin: 0;
+  font-family: "Amatic SC", cursive;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  background-image: url(images/bg.png);
+
+  font-size: 40px;
+  background-repeat: repeat;
+  min-height: 100vh;
+  background-color: black;
+  color: var(--font-color);
+
+  box-sizing: content-box;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+button,
+input {
+  font: inherit;
+  color: inherit;
+  border: none;
+  background-color: transparent;
+  padding: 0 7px;
+  cursor: pointer;
+}
+button:hover,
+input:hover,
+button:active,
+input:active,
+button:focus,
+input:focus {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+input {
+  background-color: inherit;
+  width: 60px;
+  text-align: center;
+}
+
+.dateContainer {
+  display: grid;
+  grid-template-columns: repeat(3, 20%);
+  grid-template-rows: auto auto;
+  justify-content: space-around;
+  margin: var(--margin) auto 0 auto;
+  width: 90vw;
+  column-gap: 15px;
+  row-gap: var(--margin);
+  grid-template-areas:
+    "year month day"
+    "cal_button cal_button cal_button"
+    "age age age";
+}
+.dateContainer > button {
+  grid-area: cal_button;
+  height: 80px;
+  max-width: 160px;
+  justify-self: center;
+}
+.dateContainer > p {
+  grid-area: age;
+  justify-self: center;
+}
+.dateSelector {
+  display: grid;
+  grid-template-rows: repeat(2, 50%);
+  grid-template-columns: 15% 15% auto 15% 15%;
+  grid-template-areas:
+    "header header header header header"
+    "bb b title f ff";
+}
+.dateSelector h2 {
+  grid-area: header;
+}
+.dateSelector button:nth-of-type(1) {
+  grid-area: b;
+}
+.dateSelector button:nth-of-type(2) {
+  grid-area: bb;
+}
+.dateSelector input {
+  grid-area: title;
+  justify-self: center;
+}
+.dateSelector button:nth-of-type(3) {
+  grid-area: f;
+}
+.dateSelector button:nth-of-type(4) {
+  grid-area: ff;
+}
+
+h1,
+h2 {
+  text-align: center;
+}
+h1 {
+  font-size: 2em;
+  margin-top: calc(var(--margin) / 2);
+}
+h2 {
+  font-size: 1.5em;
+}
